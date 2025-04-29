@@ -1,6 +1,3 @@
-// page.js
-
-// 1) Función para cargar un script externo de forma dinámica
 function loadExternalScript(src) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -11,21 +8,20 @@ function loadExternalScript(src) {
     });
   }
   
-  // 2) Al cargar el DOM, traemos y arrancamos confetti
+  
   document.addEventListener('DOMContentLoaded', () => {
-    // Ruta al bundle de canvas-confetti con canal de workers
+    
     const CONFETTI_SRC = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js';
   
     loadExternalScript(CONFETTI_SRC)
       .then(() => {
         const canvas = document.getElementById('confetiCanvas');
-        // Crear instancia attaching to nuestro canvas
+        
         const myConfetti = confetti.create(canvas, {
-          resize: true,   // Se adapta si cambias tamaño de container
-          useWorker: true // Para que no bloquee el hilo principal
+          resize: true,   
+          useWorker: true 
         });
   
-        // 3) Loop infinito de confeti
         setInterval(() => {
           myConfetti({
             particleCount: 7,
