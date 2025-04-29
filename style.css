@@ -1,0 +1,125 @@
+/*contenedor principal*/
+.contenedor-principal {
+    overflow-y: auto;
+    /* degradado suave y semitransparente */
+    background: linear-gradient(270deg,
+            rgba(255, 110, 196, 0.3),
+            /* rosa */
+            rgba(120, 115, 245, 0.3),
+            /* violeta */
+            rgba(74, 222, 222, 0.3),
+            /* celeste */
+            rgba(74, 222, 112, 0.3)
+            /* verde */
+        );
+    background-size: 800% 800%;
+    animation: fondoGradient 8s ease infinite;
+
+}
+
+.titulo {
+    font-size: 8vw;
+    font-weight: bold;
+    position: relative;
+    text-shadow:
+        -2px -2px 0 #ff6ec4,
+        /* rosa arriba izquierda */
+        2px -2px 0 #7873f5,
+        /* violeta arriba derecha */
+        -2px 2px 0 #4ADEDE,
+        /* celeste abajo izquierda */
+        2px 2px 0 #4ADE70;
+    /* verde abajo derecha */
+}
+
+@keyframes fondoGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .titulo {
+        font-size: 8vw;
+        /* 10% del ancho de viewport */
+    }
+
+    .subtitulo {
+        font-size: 3vw;
+        /*  3% del ancho de viewport */
+    }
+}
+
+
+.subtitulo {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #403738;
+}
+
+.card-foto {
+    width: 90vw;
+    /* en móvil ocupa 90% del ancho */
+    max-width: 25rem;
+    /* en desktop máximo 25rem */
+    aspect-ratio: 1;
+    /* siempre cuadrada */
+    overflow: hidden;
+    border-radius: .5rem;
+}
+
+.foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@keyframes upDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* sube 10px */
+    }
+}
+
+/* Aplica la animación a tus flechas */
+.flecha {
+    animation: upDown 2s ease-in-out infinite;
+}
+
+/*contenedor Secundario*/
+.contenedor-secundario {
+    background-color: #000;
+}
+@media (min-width: 992px) {
+    .video-ajustado {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .video-ajustado {
+      width: 100%;
+    }
+  }
+
+/*Escabio*/
+.escabio{
+    width: 100%;
+    height: 100%;
+}
